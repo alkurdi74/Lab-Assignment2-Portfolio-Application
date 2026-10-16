@@ -1,0 +1,1056 @@
+{
+  "timestamp": "2026-10-16T21:38:26.929Z",
+  "database": "Portfolio_test_1792186705877",
+  "evidence": [
+    {
+      "method": "GET",
+      "url": "/",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Welcome to My Portfolio application."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/users",
+      "request": {
+        "name": "API Tester",
+        "email": "tester@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "name": "API Tester",
+        "email": "tester@example.com",
+        "_id": "6ad299526a5812d605b48ea1",
+        "created": "2026-10-16T21:38:26.018Z",
+        "updated": "2026-10-16T21:38:26.018Z"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "tester@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "Invalid email or password."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "tester@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "token": "[JWT redacted]",
+        "user": {
+          "_id": "6ad299526a5812d605b48ea1",
+          "name": "API Tester",
+          "email": "tester@example.com",
+          "created": "2026-10-16T21:38:26.018Z",
+          "updated": "2026-10-16T21:38:26.018Z"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/users",
+      "request": {
+        "name": "Duplicate",
+        "email": "tester@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 409,
+      "actual": 409,
+      "response": {
+        "error": "Email already exists."
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/contacts/507f1f77bcf86cd799439011",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/contacts",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/contacts",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "_id": "6ad299526a5812d605b48ea7",
+        "__v": 0
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts",
+      "expected": 200,
+      "actual": 200,
+      "response": [
+        {
+          "_id": "6ad299526a5812d605b48ea7",
+          "firstname": "Example",
+          "lastname": "Student",
+          "email": "example@example.com",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts/6ad299526a5812d605b48ea7",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ea7",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/contacts/6ad299526a5812d605b48ea7",
+      "request": {
+        "firstname": "Updated"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ea7",
+        "firstname": "Updated",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/contacts/6ad299526a5812d605b48ea7",
+      "request": {
+        "email": "invalid"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Path `email` is invalid (invalid)."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/contacts",
+      "request": {},
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: firstname, lastname, email, phone, message"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/contacts",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "unexpected": "value"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: firstname, lastname, email, phone, message"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts/invalid",
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Invalid record ID."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts/507f1f77bcf86cd799439011",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/contacts/6ad299526a5812d605b48ea7",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Record deleted successfully."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts/6ad299526a5812d605b48ea7",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/contacts",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "_id": "6ad299526a5812d605b48eba",
+        "__v": 0
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/contacts",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "All records deleted successfully.",
+        "deletedCount": 1
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/contacts",
+      "expected": 200,
+      "actual": 200,
+      "response": []
+    },
+    {
+      "method": "POST",
+      "url": "/api/projects",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/projects/507f1f77bcf86cd799439011",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/projects",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/projects",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "_id": "6ad299526a5812d605b48ec1",
+        "__v": 0
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects",
+      "expected": 200,
+      "actual": 200,
+      "response": [
+        {
+          "_id": "6ad299526a5812d605b48ec1",
+          "title": "Example Portfolio Entry",
+          "firstname": "Example",
+          "lastname": "Student",
+          "email": "example@example.com",
+          "completion": "2026-09-28T00:00:00.000Z",
+          "description": "Assignment API test record",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects/6ad299526a5812d605b48ec1",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ec1",
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/projects/6ad299526a5812d605b48ec1",
+      "request": {
+        "title": "Updated Entry"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ec1",
+        "title": "Updated Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/projects/6ad299526a5812d605b48ec1",
+      "request": {
+        "email": "invalid"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Path `email` is invalid (invalid)."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/projects",
+      "request": {},
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: title, firstname, lastname, email, completion, description"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/projects",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record",
+        "unexpected": "value"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: title, firstname, lastname, email, completion, description"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects/invalid",
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Invalid record ID."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects/507f1f77bcf86cd799439011",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/projects/6ad299526a5812d605b48ec1",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Record deleted successfully."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects/6ad299526a5812d605b48ec1",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/projects",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "_id": "6ad299526a5812d605b48ed2",
+        "__v": 0
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/projects",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "All records deleted successfully.",
+        "deletedCount": 1
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/projects",
+      "expected": 200,
+      "actual": 200,
+      "response": []
+    },
+    {
+      "method": "POST",
+      "url": "/api/qualifications",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/qualifications/507f1f77bcf86cd799439011",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/qualifications",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/qualifications",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "_id": "6ad299526a5812d605b48ed8",
+        "__v": 0
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications",
+      "expected": 200,
+      "actual": 200,
+      "response": [
+        {
+          "_id": "6ad299526a5812d605b48ed8",
+          "title": "Example Portfolio Entry",
+          "firstname": "Example",
+          "lastname": "Student",
+          "email": "example@example.com",
+          "completion": "2026-09-28T00:00:00.000Z",
+          "description": "Assignment API test record",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications/6ad299526a5812d605b48ed8",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ed8",
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/qualifications/6ad299526a5812d605b48ed8",
+      "request": {
+        "title": "Updated Entry"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48ed8",
+        "title": "Updated Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "__v": 0
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/qualifications/6ad299526a5812d605b48ed8",
+      "request": {
+        "email": "invalid"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Path `email` is invalid (invalid)."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/qualifications",
+      "request": {},
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: title, firstname, lastname, email, completion, description"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/qualifications",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record",
+        "unexpected": "value"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: title, firstname, lastname, email, completion, description"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications/invalid",
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Invalid record ID."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications/507f1f77bcf86cd799439011",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/qualifications/6ad299526a5812d605b48ed8",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Record deleted successfully."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications/6ad299526a5812d605b48ed8",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/qualifications",
+      "request": {
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "title": "Example Portfolio Entry",
+        "completion": "2026-09-28",
+        "description": "Assignment API test record"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "title": "Example Portfolio Entry",
+        "firstname": "Example",
+        "lastname": "Student",
+        "email": "example@example.com",
+        "completion": "2026-09-28T00:00:00.000Z",
+        "description": "Assignment API test record",
+        "_id": "6ad299526a5812d605b48ee9",
+        "__v": 0
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/qualifications",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "All records deleted successfully.",
+        "deletedCount": 1
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/qualifications",
+      "expected": 200,
+      "actual": 200,
+      "response": []
+    },
+    {
+      "method": "PUT",
+      "url": "/api/users/507f1f77bcf86cd799439011",
+      "request": {
+        "name": "Example User",
+        "email": "example@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/users",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "A valid sign-in token is required."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/users",
+      "request": {
+        "name": "Example User",
+        "email": "example@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 201,
+      "actual": 201,
+      "response": {
+        "name": "Example User",
+        "email": "example@example.com",
+        "_id": "6ad299526a5812d605b48eee",
+        "created": "2026-10-16T21:38:26.519Z",
+        "updated": "2026-10-16T21:38:26.519Z"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users",
+      "expected": 200,
+      "actual": 200,
+      "response": [
+        {
+          "_id": "6ad299526a5812d605b48ea1",
+          "name": "API Tester",
+          "email": "tester@example.com",
+          "created": "2026-10-16T21:38:26.018Z",
+          "updated": "2026-10-16T21:38:26.018Z"
+        },
+        {
+          "_id": "6ad299526a5812d605b48eee",
+          "name": "Example User",
+          "email": "example@example.com",
+          "created": "2026-10-16T21:38:26.519Z",
+          "updated": "2026-10-16T21:38:26.519Z"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48eee",
+        "name": "Example User",
+        "email": "example@example.com",
+        "created": "2026-10-16T21:38:26.519Z",
+        "updated": "2026-10-16T21:38:26.519Z"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "request": {
+        "name": "Updated User"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48eee",
+        "name": "Updated User",
+        "email": "example@example.com",
+        "created": "2026-10-16T21:38:26.519Z",
+        "updated": "2026-10-16T21:38:26.584Z"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "request": {
+        "email": "invalid"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Path `email` is invalid (invalid)."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/users",
+      "request": {},
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: name, email, password"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/users",
+      "request": {
+        "name": "Example User",
+        "email": "example@example.com",
+        "password": "[redacted]",
+        "unexpected": "value"
+      },
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Provide only these fields: name, email, password"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users/invalid",
+      "expected": 400,
+      "actual": 400,
+      "response": {
+        "error": "Invalid record ID."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users/507f1f77bcf86cd799439011",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "example@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "token": "[JWT redacted]",
+        "user": {
+          "_id": "6ad299526a5812d605b48eee",
+          "name": "Updated User",
+          "email": "example@example.com",
+          "created": "2026-10-16T21:38:26.519Z",
+          "updated": "2026-10-16T21:38:26.584Z"
+        }
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "request": {
+        "password": "[redacted]"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "_id": "6ad299526a5812d605b48eee",
+        "name": "Updated User",
+        "email": "example@example.com",
+        "created": "2026-10-16T21:38:26.519Z",
+        "updated": "2026-10-16T21:38:26.706Z"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "Session expired. Sign in again."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "example@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "Invalid email or password."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "example@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "token": "[JWT redacted]",
+        "user": {
+          "_id": "6ad299526a5812d605b48eee",
+          "name": "Updated User",
+          "email": "example@example.com",
+          "created": "2026-10-16T21:38:26.519Z",
+          "updated": "2026-10-16T21:38:26.706Z"
+        }
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Record deleted successfully."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users/6ad299526a5812d605b48eee",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Record not found."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signout",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "Signed out successfully. All tokens for this user are revoked."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "Session expired. Sign in again."
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/auth/signin",
+      "request": {
+        "email": "tester@example.com",
+        "password": "[redacted]"
+      },
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "token": "[JWT redacted]",
+        "user": {
+          "_id": "6ad299526a5812d605b48ea1",
+          "name": "API Tester",
+          "email": "tester@example.com",
+          "created": "2026-10-16T21:38:26.018Z",
+          "updated": "2026-10-16T21:38:26.864Z"
+        }
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/api/users",
+      "expected": 200,
+      "actual": 200,
+      "response": {
+        "message": "All records deleted successfully.",
+        "deletedCount": 1
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/api/users",
+      "expected": 401,
+      "actual": 401,
+      "response": {
+        "error": "Session expired. Sign in again."
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/missing",
+      "expected": 404,
+      "actual": 404,
+      "response": {
+        "error": "Route not found."
+      }
+    }
+  ]
+}

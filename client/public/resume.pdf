@@ -1,0 +1,113 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2870 >>
+stream
+BT /F2 11 Tf 48 744 Td (Mohamad Alkurdi) Tj ET
+BT /F1 10.5 Tf 48 729 Td (Ottawa, Ontario | 613-796-8578 | Mohamadalkurdi@hotmail.com) Tj ET
+BT /F1 10.5 Tf 48 714 Td (LinkedIn: https://www.linkedin.com/in/mohamad-alkurdi-839344b/) Tj ET
+BT /F1 10.5 Tf 48 699 Td (Languages: English and Arabic) Tj ET
+BT /F2 11 Tf 48 669 Td (PROFILE) Tj ET
+BT /F1 10.5 Tf 48 654 Td (Software Engineering student at Centennial College and a graduate of the Cyber Security) Tj ET
+BT /F1 10.5 Tf 48 639 Td (Analyst program at Willis College. Background in IT, networking, audiovisual systems and) Tj ET
+BT /F1 10.5 Tf 48 624 Td (project management. Currently developing React and web application skills.) Tj ET
+BT /F2 11 Tf 48 594 Td (EDUCATION) Tj ET
+BT /F1 10.5 Tf 48 579 Td (Centennial College | 2025-present) Tj ET
+BT /F1 10.5 Tf 48 564 Td (Advanced Diploma in Software Engineering - in progress.) Tj ET
+BT /F1 10.5 Tf 48 549 Td (Willis College | 2024-2025) Tj ET
+BT /F1 10.5 Tf 48 534 Td (Diploma in Cyber Security Analyst Program - completed.) Tj ET
+BT /F2 11 Tf 48 504 Td (PROFESSIONAL QUALIFICATIONS) Tj ET
+BT /F1 10.5 Tf 48 489 Td (Microsoft Certified System Engineer \(MCSE\) - 2000) Tj ET
+BT /F1 10.5 Tf 48 474 Td (Microsoft Certified System Administrator \(MCSA\) - 2000) Tj ET
+BT /F1 10.5 Tf 48 459 Td (Crestron CTI Programming Class Preparation - 2018) Tj ET
+BT /F1 10.5 Tf 48 444 Td (Crestron Digital Media Certified Designer \(DMC-D-4K\) - 2018) Tj ET
+BT /F1 10.5 Tf 48 429 Td (Project Management Professional \(PMP\) - 2020) Tj ET
+BT /F2 11 Tf 48 399 Td (SKILLS) Tj ET
+BT /F1 10.5 Tf 48 384 Td (Networking, Windows system administration, server setup, hardware maintenance, technical) Tj ET
+BT /F1 10.5 Tf 48 369 Td (support and website hosting.) Tj ET
+BT /F1 10.5 Tf 48 354 Td (Project planning, communication, teamwork, technical presentations and documentation.) Tj ET
+BT /F1 10.5 Tf 48 339 Td (Microsoft Office, Microsoft Project, Visio, AutoCAD, Adobe Premiere and Adobe Media) Tj ET
+BT /F1 10.5 Tf 48 324 Td (Encoder.) Tj ET
+BT /F1 10.5 Tf 48 309 Td (Audiovisual systems, video conferencing, video walls and structured cabling.) Tj ET
+BT /F2 11 Tf 48 279 Td (SELECTED COMPLETED LAB PROJECTS - WILLIS COLLEGE) Tj ET
+BT /F1 10.5 Tf 48 264 Td (Cloud security: Created an S3 bucket using the AWS CLI, added a bucket policy, uploaded) Tj ET
+BT /F1 10.5 Tf 48 249 Td (HTML and created a CloudFront distribution to serve a webpage.) Tj ET
+BT /F1 10.5 Tf 48 234 Td (SQL database administration: Worked with database structures, tables, queries, backups) Tj ET
+BT /F1 10.5 Tf 48 219 Td (and security.) Tj ET
+BT /F1 10.5 Tf 48 204 Td (Network infrastructure: Created virtual machines and practised IP addressing, DNS,) Tj ET
+BT /F1 10.5 Tf 48 189 Td (Active Directory, domain joining, Group Policy and IPv6 subnetting.) Tj ET
+BT /F1 9 Tf 48 32 Td (Mohamad Alkurdi | 1 / 2) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2867 >>
+stream
+BT /F2 11 Tf 48 744 Td (WORK EXPERIENCE) Tj ET
+BT /F1 10.5 Tf 48 729 Td (Mundun General Contracting Company | Jeddah, Saudi Arabia | 2016-2024) Tj ET
+BT /F1 10.5 Tf 48 714 Td (Project and Operations Manager) Tj ET
+BT /F1 10.5 Tf 48 699 Td (Managed the smart solution division, project scope, resources, schedules, budgets,) Tj ET
+BT /F1 10.5 Tf 48 684 Td (risks, reporting and vendors. Implemented procurement procedures and developed an) Tj ET
+BT /F1 10.5 Tf 48 669 Td (inventory system.) Tj ET
+BT /F2 11 Tf 48 639 Td (United Horizons Technology | Jeddah, Saudi Arabia | 2012-2016) Tj ET
+BT /F1 10.5 Tf 48 624 Td (Project Manager) Tj ET
+BT /F1 10.5 Tf 48 609 Td (Managed network, wireless point-to-point and video conferencing projects. Coordinated) Tj ET
+BT /F1 10.5 Tf 48 594 Td (staffing, project finance, preventive maintenance, presales design and bills of) Tj ET
+BT /F1 10.5 Tf 48 579 Td (quantities.) Tj ET
+BT /F2 11 Tf 48 549 Td (Future Systems Co. | Jeddah, Saudi Arabia | 2011-2012) Tj ET
+BT /F1 10.5 Tf 48 534 Td (Senior Account Manager, AV Department) Tj ET
+BT /F1 10.5 Tf 48 519 Td (Managed video conferencing, sound systems and video walls. Coordinated vendors and) Tj ET
+BT /F1 10.5 Tf 48 504 Td (customers, designed structured cabling, supported installations and prepared tender) Tj ET
+BT /F1 10.5 Tf 48 489 Td (proposals.) Tj ET
+BT /F2 11 Tf 48 459 Td (Timepulse Technology | Jeddah, Saudi Arabia | 2007-2010) Tj ET
+BT /F1 10.5 Tf 48 444 Td (Projects Manager) Tj ET
+BT /F1 10.5 Tf 48 429 Td (Prepared solution diagrams and coordinated customers and technical teams. Troubleshot) Tj ET
+BT /F1 10.5 Tf 48 414 Td (and installed video conferencing and IP telephony equipment.) Tj ET
+BT /F2 11 Tf 48 384 Td (Techwonders Company | Jeddah, Saudi Arabia | 2005-2007) Tj ET
+BT /F1 10.5 Tf 48 369 Td (Project Manager) Tj ET
+BT /F1 10.5 Tf 48 354 Td (Led the ZeroFone IP telephony project and managed costs, resources, risks and quality.) Tj ET
+BT /F1 10.5 Tf 48 339 Td (Oversaw nine offices, presales and support teams, monitoring, call centre operations and) Tj ET
+BT /F1 10.5 Tf 48 324 Td (financial reports.) Tj ET
+BT /F2 11 Tf 48 294 Td (Solnet Company | Jeddah, Saudi Arabia | 2003-2005) Tj ET
+BT /F1 10.5 Tf 48 279 Td (NOC Team Leader) Tj ET
+BT /F1 10.5 Tf 48 264 Td (Led technical support and customer service for ADSL, dial-up and corporate VPN) Tj ET
+BT /F1 10.5 Tf 48 249 Td (connections. Managed point-to-point and multipoint wireless connections.) Tj ET
+BT /F2 11 Tf 48 219 Td (BJ Technology | Jeddah, Saudi Arabia | 2000-2003) Tj ET
+BT /F1 10.5 Tf 48 204 Td (Web Developer) Tj ET
+BT /F1 10.5 Tf 48 189 Td (Developed static and dynamic websites using HTML, JavaScript, ASP and Java applets.) Tj ET
+BT /F1 10.5 Tf 48 174 Td (Managed website hosting, domain registration and email setup.) Tj ET
+BT /F1 9 Tf 48 32 Td (Mohamad Alkurdi | 2 / 2) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000003323 00000 n 
+0000003459 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+6377
+%%EOF
